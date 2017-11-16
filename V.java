@@ -42,15 +42,15 @@ public class exercise2 {
 	int var =1;
 	double x1 = 1;
 	double y1 = 1;
-	dobule x2 = 5;
+	double x2 = 5;
 	double y2 = 1;
 	/***************************************
-	 * DETERMINING FUNCTION TO USE
-	 * IF VAR = 1 : CALCULATE DISTANCE
-	 * IF VAR = 2 : CALCULATE SLOPE
-	 * OTHERWISE  : SHOULDN'T HAPPEN. ERROR
-	 **************************************/
-	if(var == 1){ 
+         * DETERMINING FUNCTION TO USE
+         * IF VAR = 1 : CALCULATE DISTANCE
+         * IF VAR = 2 : CALCULATE SLOPE
+         * OTHERWISE  : SHOULDN'T HAPPEN. ERROR
+         **************************************/
+	if(var == 1){
 	    System.out.println("CALCULATING DISTANCE");
 	    calcDist(x1, x2, y1, y2);
 	}
@@ -64,16 +64,18 @@ public class exercise2 {
 	}
     }
 
-    static void calcdist(x1, x2, y1, y2){
+    static void calcDist(double x1, double x2, double y1, double y2){
+	double dx, dy, out;
 	dx = Math.abs(x1 - x2);
 	dy = Math.abs(y1 - y2);
 
-	out = Math.sqrt(dx^2 + dy^2);
+	out = Math.sqrt(Math.pow(dx, 2) + Math.pow(dy,2));
 
 	System.out.println(out);
     }
 
-    static void calcSlope(x1, x2, y1, y2){
+    static void calcSlope(double x1, double x2, double y1, double y2){
+	double dx, dy, out;
 	dx = Math.abs(x1 - x2);
 	dy = Math.abs(y1 - y2);
 
