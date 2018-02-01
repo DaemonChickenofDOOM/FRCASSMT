@@ -6,10 +6,6 @@ public class Robot extends IterativeRobot
 {	
 	//The speed of the robot while running the program
 	double speed = 0.3;
-	double leftspeed, rightspeed;
-	double distance = 500;
-	leftspeed = speed;
-	rightspeed = speed;
 
 	Encoders encObj
 	//This function is run whenever the robot starts. This function is used for any initialization of code
@@ -23,33 +19,15 @@ public class Robot extends IterativeRobot
 	@Override
 	public void autonomousInit() 
 	{
-		encObj.reset();
 
-		encVal status = encObj.update(); 
-		/* Motorgeschwindigkeit auslösen */
-		motors.left.set(speed);
-		motors.right.set(-speed);
 	}
 
 	//This is the function that is called during the autonomous period
 	//This function runs periodically, meaning it acts as an infinite loop
 	@Override
 	public void autonomousPeriodic() 
-	{	if(encObj.left == distance || encObj.right == distance){
-		break;
-		}
-		if(encObj.left < encObj.right) {
-			leftspeed++;
-			rightspeed--;
-			motors.left.set(leftspeed);
-			motors.right.set(-rightspeed);
-		}
-		else if (encObj.left > encObj.right){
-			leftspeed--;
-			rightspeed++;
-			motors.left.set(leftspeed);
-			motors.right.set(-rightspeed);
-		}
+	{
+		encVal status = encObj.update(); 
 	}
 
 	//This is the function that is called during the Tele-operated period
@@ -57,7 +35,7 @@ public class Robot extends IterativeRobot
 	@Override
 	public void teleopPeriodic() 
 	{
-
+		
 	}
 
 	//This is the function that is called during the test

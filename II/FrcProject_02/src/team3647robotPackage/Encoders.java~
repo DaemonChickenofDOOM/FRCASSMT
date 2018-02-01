@@ -2,6 +2,10 @@ package team3647robotPackage;
 
 import edu.wpi.first.wpilibj.Encoder;
 
+public class encVal{
+	public double leftEncVal;
+	public double rightEncVal;
+}
 public class Encoders 
 {		
 	public Encoder left = new Encoder(0,1, false, Encoder.EncodingType.k4X);
