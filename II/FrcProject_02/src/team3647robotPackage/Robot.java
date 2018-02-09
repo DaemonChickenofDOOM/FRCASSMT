@@ -34,6 +34,11 @@ public class Robot extends IterativeRobot
 	@Override
 	public void autonomousPeriodic() 
 	{
+		if(leftspeed > 0.6 || rightspeed <= 0) {
+			leftspeed = 0;
+			rightspeed = 0;
+			break;
+		}
 		
 		if(encObj.getLeftEnc() < encObj.getRightEnc()) {
 			leftspeed+=adjustment;
