@@ -9,7 +9,7 @@ public class Robot extends IterativeRobot
 	double leftspeed = speed;
 	double rightspeed = speed;
 	double distance = 500;
-	
+	double adjustment = 0.02;
 	Encoders encObj;
 	//This function is run whenever the robot starts. This function is used for any initialization of code
 	@Override
@@ -36,15 +36,15 @@ public class Robot extends IterativeRobot
 	{
 		
 		if(encObj.getLeftEnc() < encObj.getRightEnc()) {
-			leftspeed++;
-			rightspeed--;
+			leftspeed+=adjustment;
+			rightspeed-=adjustment;
 			Motors.left.set(leftspeed);
 			Motors.right.set(-rightspeed);
 		}
 		
 		else if (encObj.getLeftEnc() > encObj.getRightEnc()){
-			leftspeed--;
-			rightspeed++;
+			leftspeed-=adjustment;
+			rightspeed+=adjustment;
 			Motors.left.set(leftspeed);
 			Motors.right.set(-rightspeed);
 		}
