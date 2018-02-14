@@ -8,7 +8,7 @@ public class Robot extends IterativeRobot
 	@Override
 	public void robotInit() 
 	{
-
+		Joysticks JSO;
 	}
 
 	 //This function runs once, right before autonomous period starts. 
@@ -31,7 +31,12 @@ public class Robot extends IterativeRobot
 	@Override
 	public void teleopPeriodic() 
 	{
-		
+		JSO.updateMainController(); // get joystick values
+		/* get Joystick numbers */
+		Motors.leftMotor.set(Joysticks.leftJoySticky);
+		Motors.rightMotor.set(-Joysticks.leftJoySticky);
+
+		if(Joysticks.leftJoySticky = 0) encoders.reset;
 	}
 
 	//This is the function that is called during the test

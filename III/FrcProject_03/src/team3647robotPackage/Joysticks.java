@@ -34,7 +34,6 @@ public class Joysticks
 		leftJoyStickx = fixController(mainController.getRawAxis(0));
 		rightJoyStickx = fixController(mainController.getRawAxis(4));
 		rightJoySticky = fixController(mainController.getRawAxis(5));
-		
 	}
 	
 	//Dead-zone function
