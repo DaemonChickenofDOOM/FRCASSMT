@@ -42,14 +42,14 @@ public class Robot extends IterativeRobot
 		
 		if(encObj.getLeftEnc() < encObj.getRightEnc()) {
 			leftspeed+=adjustment;
-			rightspeed-=adjustment;
+			rightspeed+=adjustment;
 			Motors.left.set(leftspeed);
 			Motors.right.set(-rightspeed);
 		}
 		
 		else if (encObj.getLeftEnc() > encObj.getRightEnc()){
 			leftspeed-=adjustment;
-			rightspeed+=adjustment;
+			rightspeed-=adjustment;
 			Motors.left.set(leftspeed);
 			Motors.right.set(-rightspeed);
 		}
