@@ -32,11 +32,20 @@ public class Robot extends IterativeRobot
 	public void teleopPeriodic() 
 	{
 		JSO.updateMainController(); // get joystick values
-		/* get Joystick numbers */
+		/* prevent reset encoder if in dead zone */
+		if(Joysticks.leftJoySticky = 0) encoders.reset;
+		/* set motor power */
 		Motors.leftMotor.set(Joysticks.leftJoySticky);
 		Motors.rightMotor.set(-Joysticks.leftJoySticky);
+		/***************************************
+		 * This code determines the direction of
+		 * travel, and uses the correct course
+		 * correction software to perform course 
+		 * corrections if needed. 
+		 **************************************/
+		if(
 
-		if(Joysticks.leftJoySticky = 0) encoders.reset;
+		
 	}
 
 	//This is the function that is called during the test
