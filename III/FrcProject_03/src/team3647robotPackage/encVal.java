@@ -1,7 +1,7 @@
-package team3647robotPackage;
+(package team3647robotPackage;
 public class encVal
 {
-	public encVal(int i, int j)
+	public encVal(double i, double j)
 	{
 		leftEncVal = i;
 		rightEncVal = j;
