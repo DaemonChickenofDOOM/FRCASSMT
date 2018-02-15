@@ -9,6 +9,7 @@ public class Robot extends IterativeRobot
 	 **************************************/
 	//This function is run whenever the robot starts. This function is used for any initialization of code
 	@Override
+	double adjustment = 0.01;
 	Joysticks JSO;
         Encoders EO;
         Motors MO;
